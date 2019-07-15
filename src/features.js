@@ -1,4 +1,6 @@
 const definitions = require("./built-in-definitions");
+const fs = require('fs');
+const path = require('path');
 
 function has(obj, key) {
   return Object.prototype.hasOwnProperty.call(obj, key);
@@ -163,6 +165,16 @@ module.exports = function({ types: t }) {
     name: "babel-foo",
     pre() {
       this.builtIns = new Set();
+    },
+    post(state) {
+      const pluginOptions = state.opts.plugins.find(plugin => plugin.key === 'babel-foo').options || {};
+      const outputDestination = pluginOptions.outputDestination || 'features.json';
+      const builtIns = JSON.stringify(Array.from(this.builtIns), undefined, 4);
+      if (path.isAbsolute(outputDestination)) {
+        fs.writeFileSync(outputDestination, builtIns, 'utf-8');
+      } else {
+        fs.writeFileSync(path.join(state.opts.cwd, outputDestination), builtIns, 'utf-8');
+      }
     },
     visitor: recordEsRuntimeFeatures,
   };

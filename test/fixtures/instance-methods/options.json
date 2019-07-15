@@ -1,3 +1,3 @@
 {
-	"plugins": ["transform-polyfill-io"]
+    "outputDestination": "./test/fixtures/instance-methods/features.json"
 }

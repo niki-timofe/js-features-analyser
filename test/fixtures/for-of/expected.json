@@ -1,0 +1,6 @@
+[
+    "Symbol",
+    "Symbol.iterator",
+    "Array",
+    "Array.prototype[@@iterator]"
+]

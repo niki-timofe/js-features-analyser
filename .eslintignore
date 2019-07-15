@@ -1,4 +1,1 @@
-/lib
-fixtures
-/data
-/flow-typed
+test/fixtures/**
