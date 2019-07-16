@@ -1,1 +1,1 @@
-for (var i of [1,2,3]) {}
+for (var i of [1, 2, 3]) {}
