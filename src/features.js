@@ -1,6 +1,8 @@
 "use strict";
 
 const definitions = require("./built-in-definitions");
+// console.log({instanceMethods: definitions.instanceMethods})
+
 const fs = require('fs');
 const path = require('path');
 
@@ -95,9 +97,6 @@ module.exports = function({ types: t }) {
         const prop = node.property;
 
         if (!t.isReferenced(obj, node)) return;
-
-        // doesn't reference the global
-        if (path.scope.getBindingIdentifier(obj.name)) return;
 
         if (has(definitions.staticMethods, obj.name)) {
           const staticMethods = definitions.staticMethods[obj.name];
