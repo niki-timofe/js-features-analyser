@@ -1,3 +1,5 @@
+"use strict";
+
 const definitions = require("./built-in-definitions");
 const fs = require('fs');
 const path = require('path');
@@ -24,6 +26,22 @@ module.exports = function({ types: t }) {
   }
 
   const recordEsRuntimeFeatures = {
+    ForOfStatement(path) {
+      recordEsRuntimeFeature(path, "Symbol.iterator", this.builtIns);
+      recordEsRuntimeFeature(path, "Int8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8ClampedArray.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float64Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "String.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Map.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Set.prototype[@@iterator]", this.builtIns);
+    },
     // Symbol()
     // new Promise
     ReferencedIdentifier(path) {
