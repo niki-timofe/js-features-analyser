@@ -1,7 +1,6 @@
 "use strict";
 
 const definitions = require("./built-in-definitions");
-// console.log({instanceMethods: definitions.instanceMethods})
 
 const fs = require('fs');
 const path = require('path');
@@ -223,6 +222,26 @@ module.exports = function({ types: t }) {
       this.builtIns = new Set();
     },
     post(state) {
+      // It is very likely we have included TypedArray instance methods when in fact no TypedArrays were used in the code.
+      // If we see that a TypedArray constructor has not been used, let's remove it's instance methods from the builtIns Set.
+
+      const typedArrayConstuctors = [
+        "Int8Array",
+        "Uint8Array",
+        "Uint8ClampedArray",
+        "Int16Array",
+        "Uint16Array",
+        "Int32Array",
+        "Uint32Array",
+        "Float32Array",
+        "Float64Array"
+      ];
+
+      for (const constructor of typedArrayConstuctors) {
+        if (!this.builtIns.has(constructor)) {
+          this.builtIns = new Set(Array.from(this.builtIns).filter(item => !item.startsWith(constructor)));
+        }
+      }
       const pluginOptions = state.opts.plugins.find(plugin => plugin.key === 'js-features-analyser').options || {};
       const outputDestination = pluginOptions.outputDestination || 'features.json';
       const builtIns = JSON.stringify(Array.from(this.builtIns), undefined, 4);
