@@ -22,7 +22,7 @@ require("yargs")
         
         const file = path.join(process.cwd(), argv.file);
         const fileContents = await readFile(file, 'utf-8');
-        const tempFolder = await mkdtemp(path.join(os.tmpdir(), 'babel-es-runtime-features-extractor'));
+        const tempFolder = await mkdtemp(path.join(os.tmpdir(), 'js-features-analyser'));
         const outputDestination = path.join(tempFolder, 'features.json');
 
         try {

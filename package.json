@@ -1,5 +1,5 @@
 {
-  "name": "@babel/plugin-transform-polyfill-io",
+  "name": "js-features-analyser",
   "main": "src/index.js",
   "scripts": {
     "fix": "eslint . --fix",

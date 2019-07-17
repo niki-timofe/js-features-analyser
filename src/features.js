@@ -218,12 +218,12 @@ module.exports = function({ types: t }) {
   };
 
   return {
-    name: "babel-foo",
+    name: "js-features-analyser",
     pre() {
       this.builtIns = new Set();
     },
     post(state) {
-      const pluginOptions = state.opts.plugins.find(plugin => plugin.key === 'babel-foo').options || {};
+      const pluginOptions = state.opts.plugins.find(plugin => plugin.key === 'js-features-analyser').options || {};
       const outputDestination = pluginOptions.outputDestination || 'features.json';
       const builtIns = JSON.stringify(Array.from(this.builtIns), undefined, 4);
       if (path.isAbsolute(outputDestination)) {

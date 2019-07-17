@@ -1,4 +1,4 @@
-# babel-es-runtime-features-extractor
+# js-features-analyser
 
 ## How to use
 
