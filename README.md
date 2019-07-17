@@ -1,5 +1,10 @@
 # babel-es-runtime-features-extractor
 
+## How to use
+
+`x anaylse --file ./your-file.js`
+
+## Limitations
 This project does not compile syntax at all.
 
 Create a bundle which targets the syntax level you support (ES3/5/2017/2019) and then pass that bundle through this tool.
