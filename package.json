@@ -15,7 +15,7 @@
     "jest": "^24.8.0",
     "rimraf": "^2.6.3"
   },
-  "version": "1.0.0",
+  "version": "0.0.1",
   "dependencies": {
     "@babel/core": "^7.5.4",
     "globals": "^11.12.0",
