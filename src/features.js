@@ -69,7 +69,20 @@ module.exports = function({ types: t }) {
         return;
       }
 
-      record(path, "web.dom.iterable", this.builtIns);
+      recordEsRuntimeFeature(path, "Symbol.iterator", this.builtIns);
+      recordEsRuntimeFeature(path, "Int8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8ClampedArray.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float64Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "String.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Map.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Set.prototype[@@iterator]", this.builtIns);
     },
 
     // Symbol.iterator in arr
@@ -77,14 +90,40 @@ module.exports = function({ types: t }) {
       if (path.node.operator !== "in") return;
       if (!path.get("left").matchesPattern("Symbol.iterator")) return;
 
-      record(path, "web.dom.iterable", this.builtIns);
+      recordEsRuntimeFeature(path, "Symbol.iterator", this.builtIns);
+      recordEsRuntimeFeature(path, "Int8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8ClampedArray.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float64Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "String.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Map.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Set.prototype[@@iterator]", this.builtIns);
     },
 
     // yield*
     YieldExpression(path) {
       if (!path.node.delegate) return;
 
-      record(path, "web.dom.iterable", this.builtIns);
+      recordEsRuntimeFeature(path, "Symbol.iterator", this.builtIns);
+      recordEsRuntimeFeature(path, "Int8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint8ClampedArray.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint16Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Int32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Uint32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float32Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Float64Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Array.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "String.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Map.prototype[@@iterator]", this.builtIns);
+      recordEsRuntimeFeature(path, "Set.prototype[@@iterator]", this.builtIns);
     },
 
     // Array.from
