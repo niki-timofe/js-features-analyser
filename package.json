@@ -1,6 +1,8 @@
 {
   "name": "@financial-times/js-features-analyser",
-  "main": "src/index.js",
+  "bin": {
+    "js-features-analyser": "./index.js"
+  },
   "scripts": {
     "fix": "eslint . --fix",
     "lint": "eslint .",
