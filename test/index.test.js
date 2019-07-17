@@ -10,7 +10,6 @@ const plugin = require('../src');
 const tests = globby.sync("**/code.js", {
   cwd: __dirname
 }).map(test => {
-  // test = './' + test;
   const outputDestination = path.join(__dirname, test.replace('code.js', 'features.json'));
   const expectedOutput = path.join(__dirname, test.replace('code.js', 'expected.json'))
   return {
@@ -34,6 +33,12 @@ const tests = globby.sync("**/code.js", {
   }
 })
 pluginTester({
+  babelOptions: {
+    parserOpts: {},
+    generatorOpts: {
+      compact: false
+    },
+  },
   plugin,
   filename: __filename,
   tests
