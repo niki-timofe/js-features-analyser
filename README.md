@@ -2,7 +2,7 @@
 
 ## How to use
 
-`x anaylse --file ./your-file.js`
+`x analyse --file ./your-file.js`
 
 ## Limitations
 This project does not compile syntax at all.
