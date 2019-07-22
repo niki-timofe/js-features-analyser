@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/JakeChampion/babel-es-runtime-features-extractor/compare/v0.1.1...v0.1.2) (2019-07-22)
+
+
+### Bug Fixes
+
+* reduce false positives for instance/static methods which have the same name as other instace/static methods on another object ([9290219](https://github.com/JakeChampion/babel-es-runtime-features-extractor/commit/9290219))
+
 ## [0.1.1](https://github.com/JakeChampion/babel-es-runtime-features-extractor/compare/v0.1.0...v0.1.1) (2019-07-19)
 
 
