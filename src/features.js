@@ -28,6 +28,7 @@ module.exports = function({ types: t }) {
 
   const recordEsRuntimeFeatures = {
     ForOfStatement(path) {
+      recordEsRuntimeFeature(path, "Symbol", this.builtIns);
       recordEsRuntimeFeature(path, "Symbol.iterator", this.builtIns);
       recordEsRuntimeFeature(path, "Int8Array.prototype[@@iterator]", this.builtIns);
       recordEsRuntimeFeature(path, "Uint8Array.prototype[@@iterator]", this.builtIns);
@@ -43,6 +44,7 @@ module.exports = function({ types: t }) {
       recordEsRuntimeFeature(path, "Map.prototype[@@iterator]", this.builtIns);
       recordEsRuntimeFeature(path, "Set.prototype[@@iterator]", this.builtIns);
     },
+
     // Symbol()
     // new Promise
     ReferencedIdentifier(path) {
@@ -214,6 +216,33 @@ module.exports = function({ types: t }) {
         }
       }
     },
+
+    ArrayExpression(path) {
+      recordEsRuntimeFeature(path, 'Array', this.builtIns);
+    },
+    BigIntLiteral() {},
+    BooleanLiteral(path) {
+      recordEsRuntimeFeature(path, 'Boolean', this.builtIns);
+    },
+    FunctionDeclaration(path) {
+      recordEsRuntimeFeature(path, 'Function', this.builtIns);
+    },
+    FunctionExpression(path) {
+      recordEsRuntimeFeature(path, 'Function', this.builtIns);
+    },
+    ObjectExpression(path) {
+      recordEsRuntimeFeature(path, 'Object', this.builtIns);
+    },
+    NumericLiteral(path) {
+      recordEsRuntimeFeature(path, 'Number', this.builtIns);
+    },
+    RegExpLiteral(path) {
+      recordEsRuntimeFeature(path, 'RegExp', this.builtIns);
+    },
+    StringLiteral(path) {
+      recordEsRuntimeFeature(path, 'String', this.builtIns);
+    },
+    TemplateLiteral() {},
   };
 
   return {
@@ -225,7 +254,7 @@ module.exports = function({ types: t }) {
       // It is very likely we have included TypedArray instance methods when in fact no TypedArrays were used in the code.
       // If we see that a TypedArray constructor has not been used, let's remove it's instance methods from the builtIns Set.
 
-      const typedArrayConstuctors = [
+      const constuctors = [
         "Int8Array",
         "Uint8Array",
         "Uint8ClampedArray",
@@ -234,10 +263,39 @@ module.exports = function({ types: t }) {
         "Int32Array",
         "Uint32Array",
         "Float32Array",
-        "Float64Array"
+        "Float64Array",
+        
+        "Array",
+        "ArrayBuffer",
+        "Boolean",
+        "DataView",
+        "Date",
+        "Error",
+        "EvalError",
+        "Function",
+        "JSON",
+        "Map",
+        "Math",
+        "Object",
+        "Number",
+        "Promise",
+        "Proxy",
+        "RangeError",
+        "ReferenceError",
+        "Reflect",
+        "RegExp",
+        "Set",
+        "SharedArrayBuffer",
+        "String",
+        "Symbol",
+        "SyntaxError",
+        "TypeError",
+        "URIError",
+        "WeakMap",
+        "WeakSet"
       ];
 
-      for (const constructor of typedArrayConstuctors) {
+      for (const constructor of constuctors) {
         if (!this.builtIns.has(constructor)) {
           this.builtIns = new Set(Array.from(this.builtIns).filter(item => !item.startsWith(constructor)));
         }

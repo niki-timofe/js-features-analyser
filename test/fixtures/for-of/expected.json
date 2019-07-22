@@ -1,7 +1,7 @@
 [
+        "Symbol",
         "Symbol.iterator",
         "Array.prototype[@@iterator]",
-        "String.prototype[@@iterator]",
-        "Map.prototype[@@iterator]",
-        "Set.prototype[@@iterator]"
+        "Array",
+        "Number"
 ]

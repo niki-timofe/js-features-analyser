@@ -1,6 +1,5 @@
 [
     "Uint16Array.prototype.findIndex",
-    "Array.prototype.findIndex",
     "Uint16Array.prototype",
     "Uint16Array",
     "undefined"

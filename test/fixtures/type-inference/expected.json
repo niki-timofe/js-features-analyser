@@ -1,6 +1,6 @@
 [
+    "Function",
     "Uint16Array.prototype.includes",
-    "Array.prototype.includes",
-    "String.prototype.includes",
-    "Uint16Array"
+    "Uint16Array",
+    "Number"
 ]

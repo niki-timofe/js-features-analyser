@@ -15,9 +15,9 @@
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
     "babel-plugin-tester": "^6.4.0",
-    "commitizen": "^4.0.1",
-    "cz-conventional-changelog": "^2.1.0",
-    "eslint": "^6.0.1",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.1.0",
     "globby": "^10.0.1",
     "jest": "^24.8.0",
     "rimraf": "^2.6.3",
@@ -25,8 +25,8 @@
   },
   "version": "0.1.1",
   "dependencies": {
-    "@babel/core": "^7.5.4",
-    "globals": "^11.12.0",
+    "@babel/core": "^7.5.5",
+    "globals": "^12.0.0",
     "yargs": "^13.3.0"
   },
   "repository": {

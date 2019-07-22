@@ -5,6 +5,7 @@
     "Array.prototype.includes",
     "String.prototype.includes",
     "Array.prototype.find",
+    "String",
     "Array.prototype.findIndex",
     "undefined",
     "Function.prototype.bind",
@@ -15,7 +16,6 @@
     "String.prototype.padEnd",
     "String.prototype.startsWith",
     "String.prototype",
-    "String",
     "String.prototype.codePointAt",
     "String.prototype.endsWith",
     "Array.prototype.copyWithin",
@@ -29,5 +29,5 @@
     "Array.prototype[@@iterator]",
     "String.prototype[@@iterator]",
     "Map.prototype[@@iterator]",
-    "Set.prototype[@@iterator]"
+    "Function"
 ]

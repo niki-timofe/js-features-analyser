@@ -1,7 +1,4 @@
 [
     "Object.entries",
-    "Array.prototype.entries",
-    "Map.prototype.entries",
-    "Set.prototype.entries",
     "Object"
 ]
