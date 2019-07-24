@@ -1,3 +1,10 @@
+## [0.1.3](https://github.com/JakeChampion/js-features-analyser/compare/v0.1.2...v0.1.3) (2019-07-24)
+
+
+### Bug Fixes
+
+* correct the repository field in package.json and add extra info ([6e50f68](https://github.com/JakeChampion/js-features-analyser/commit/6e50f68))
+
 ## [0.1.2](https://github.com/JakeChampion/babel-es-runtime-features-extractor/compare/v0.1.1...v0.1.2) (2019-07-22)
 
 
