@@ -23,7 +23,7 @@
     "rimraf": "^2.6.3",
     "semantic-release": "^15.13.18"
   },
-  "version": "0.2.0",
+  "version": "0.3.0",
   "dependencies": {
     "@babel/core": "^7.5.5",
     "yargs": "^13.3.0"

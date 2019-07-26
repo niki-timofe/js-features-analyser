@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/JakeChampion/js-features-analyser/compare/v0.2.0...v0.3.0) (2019-07-26)
+
+
+### Features
+
+* add basic support for web platform apis ([0c3315d](https://github.com/JakeChampion/js-features-analyser/commit/0c3315d))
+
 # [0.2.0](https://github.com/JakeChampion/js-features-analyser/compare/v0.1.3...v0.2.0) (2019-07-25)
 
 
