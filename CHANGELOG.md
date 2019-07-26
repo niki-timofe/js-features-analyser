@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/JakeChampion/js-features-analyser/compare/v0.3.0...v0.4.0) (2019-07-26)
+
+
+### Features
+
+* change the binary name and add a better readme ([ae8896b](https://github.com/JakeChampion/js-features-analyser/commit/ae8896b))
+
 # [0.3.0](https://github.com/JakeChampion/js-features-analyser/compare/v0.2.0...v0.3.0) (2019-07-26)
 
 
