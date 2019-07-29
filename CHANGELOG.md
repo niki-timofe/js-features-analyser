@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/JakeChampion/js-features-analyser/compare/v0.4.0...v0.4.1) (2019-07-29)
+
+
+### Bug Fixes
+
+* update the links in the readme now that the repository has been moved ([9f86208](https://github.com/JakeChampion/js-features-analyser/commit/9f86208))
+
 # [0.4.0](https://github.com/JakeChampion/js-features-analyser/compare/v0.3.0...v0.4.0) (2019-07-26)
 
 
